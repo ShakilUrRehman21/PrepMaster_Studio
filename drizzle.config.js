@@ -1,7 +1,11 @@
-export default{
+import { config } from 'dotenv';
+
+config({ path: '.env.local' });
+
+export default {
     schema: "./utils/schema.js",
     dialect: 'postgresql',
     dbCredentials: {
-        url: 'postgresql://ai_interview_owner:YeRrEX1oGUp9@ep-red-cloud-a5fzoq14.us-east-2.aws.neon.tech/ai_interview?sslmode=require',
+        url: process.env.NEXT_PUBLIC_DRIZZLE_DB_URL,
     }
 };
